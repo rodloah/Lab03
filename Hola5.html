@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="utf-8" />
+        <title>Casa de cambio</title>
+        <script>
+            function Cambio() {
+                var num1 = parseInt(document.getElementById("valor").value);
+                var resultado = 0;
+                var dolar1=3.81;
+                var dolar2=0.91;
+                var euro1=1.10;
+                var euro2=4.18;
+                var sol1=0.26;
+                var sol2=0.24;
+                if (document.getElementById("1").checked){
+                    if(document.getElementById("5").checked){
+                        resultado=num1*dolar2
+                        alert("El cambio de Dolares a Euros es: €"+resultado)
+                    }
+                    else if(document.getElementById("6").checked){
+                        resultado=num1*dolar1
+                        alert("El cambio de Dolares a Soles es: s/"+resultado)
+                    }
+                    else if(document.getElementById("4").checked){
+                        resultado=num1
+                        alert("Su cambio es el mismo ya que selecciono Dolares: $"+resultado)
+                    }
+                    else{
+                        alert("Tiene que completar todos los requerimientos")
+                    }
+                    }
+                if (document.getElementById("2").checked){
+                    if(document.getElementById("4").checked){
+                        resultado=num1*euro1
+                        alert("El cambio de Euros a Dolar es: $"+resultado)
+                    }
+                    else if(document.getElementById("6").checked){
+                        resultado=num1*euro2
+                        alert("El cambio de Euros a Soles es: s/"+resultado)
+                    }
+                    else if(document.getElementById("5").checked){
+                        resultado=num1
+                        alert("Su cambio es el mismo ya que selecciono Euros: €"+resultado)
+                    }
+                    else{
+                        alert("Tiene que completar todos los requerimientos")
+                    }
+                    }
+                if (document.getElementById("3").checked){
+                    if(document.getElementById("4").checked){
+                        resultado=num1*sol1
+                        alert("El cambio de Soles a Dolar es: $"+resultado)
+                    }
+                    else if(document.getElementById("5").checked){
+                        resultado=num1*sol2
+                        alert("El cambio de Soles a Euros es: €"+resultado)
+                    }
+                    else if(document.getElementById("6").checked){
+                        resultado=num1
+                        alert("Su cambio es el mismo ya que selecciono Soles: s/"+resultado)
+                    }
+                    else{
+                        alert("Tiene que completar todos los requerimientos")
+                    }
+                    }
+                }
+
+            
+            function muestraaOpcion() {
+                var opciones = document.getElementsByName("eleccion");
+                console.log(opciones);
+                for(let i = 0;i<opciones.length;i++) {
+                    if(opciones[i].checked){
+                        alert(opciones[i].value);
+                    }
+                }
+            }
+            function muestraaOpcion2() {
+                var opcion = document.getElementsByName("elecciones");
+                console.log(opcion);
+                for(let i = 0;i<opcion.length;i++) {
+                    if(opcion[i].checked){
+                        alert(opcion[i].value);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+       <p>Casa de cambio</p>
+       <p>Seleccione moneda de uso</p>
+       <input type="radio" name="eleccion" value="Su moneda de uso son Dolares"checked onclick="muestraaOpcion()" id="1">Dolar
+       <input type="radio" name="eleccion" value="Su moneda de uso son Euros"onclick="muestraaOpcion()"id="2">Euro
+       <input type="radio" name="eleccion" value="Su moneda de uso son Soles"onclick="muestraaOpcion()"id="3">Soles
+       <p>Monto</p><input type="text" id="valor" min="1" max="10000"><br>
+       <p>Selecione moneda a cambiar</p>
+        <form>
+            <input type="radio" name="elecciones" value="Su tipo de cambio sera en Dolares"onclick="muestraaOpcion2()"id="4">Dolar
+            <input type="radio" name="elecciones" value="Su tipo de cambio sera en Euros"onclick="muestraaOpcion2()"id="5">Euro
+            <input type="radio" name="elecciones" value="Su tipo de cambio sera en Soles"onclick="muestraaOpcion2()"id="6">Soles<br>
+        
+            <button type="button" onclick="Cambio()">Cambiar</button><br>
+         
+            
+        </form>
+    </body>
+</html>
